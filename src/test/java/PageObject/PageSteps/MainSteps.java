@@ -1,6 +1,7 @@
 package PageObject.PageSteps;
 
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
@@ -26,11 +27,10 @@ public class MainSteps {
     public static void compareTasks() {
 
         int pval = Integer.parseInt($x(problemValue).text().split(" ")[0]);
-        System.out.println("Количество задач в шапке проекта = " + pval);
+        Allure.addAttachment("Количество задач в шапке проекта", String.valueOf(pval));
 
         int xval = $$(By.xpath("//div[@class='ghx-issue-content']")).size();
-        System.out.println("Количество заведённых задач = " + xval);
-
+        Allure.addAttachment("Количество заведённых задач", String.valueOf(xval));
         Assertions.assertEquals(pval, xval);
     }
 
