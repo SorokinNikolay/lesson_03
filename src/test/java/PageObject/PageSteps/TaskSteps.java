@@ -1,12 +1,9 @@
 package PageObject.PageSteps;
 
 import com.codeborne.selenide.Condition;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static PageObject.PageElements.TaskElem.*;
 import static Settings.WebSettings.getScreenshoot;
