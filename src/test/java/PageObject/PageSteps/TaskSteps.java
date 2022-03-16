@@ -13,7 +13,7 @@ public class TaskSteps extends MainSteps {
         $x(inProgressButton).click();
     }
 
-    @Step("Назначаем задаче статус\"Готово\"")
+    @Step("Назначаем задаче статус \"Готово\"")
     public static void done() {
         $x(businessProcessButton).click();
         $x(doneButton).click();
