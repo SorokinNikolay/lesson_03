@@ -38,11 +38,11 @@ public class MainSteps {
     public static void createAndGoToTask() {
         $x(createButton).click();
         $x(topic).setValue("Сорокин Николай");
-        $(By.xpath("//*[@id='aui-uid-1']")).click();
+        $x(textButton).click();
         $x(description).setValue("Тестовое описание");
         $x(createTaskButton).click();
 
-        $(By.xpath("//*[@id='aui-flag-container']//a")).click();
+        $x(taskPush).click();
     }
 
 }

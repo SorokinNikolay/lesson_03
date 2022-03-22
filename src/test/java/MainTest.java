@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import static PageObject.PageSteps.AuthorizationSteps.*;
 import static PageObject.PageSteps.MainSteps.*;
 import static PageObject.PageSteps.TaskSteps.*;
+import static Utils.Configuration.getFromProperties;
 
 public class MainTest {
 
@@ -12,8 +13,8 @@ public class MainTest {
     @Tag("Работа с Jira")
     @DisplayName("Проверка количества задач")
     public void Test1() {
-        openUrl("https://edujira.ifellow.ru/login.jsp");
-        autorisation("sorNikolai");
+        openUrl(getFromProperties("jiraAuthPage"));
+        autorisation(getFromProperties("login"));
         isOpened();
         goToProjectPage();
         compareTasks();
@@ -23,8 +24,8 @@ public class MainTest {
     @Tag("Работа с Jira")
     @DisplayName("Проверка создания задачи и изменения её статусов")
     public void Test2() {
-        openUrl("https://edujira.ifellow.ru/login.jsp");
-        autorisation("sorNikolai");
+        openUrl(getFromProperties("jiraAuthPage"));
+        autorisation(getFromProperties("login"));
         isOpened();
         createAndGoToTask();
         inProgress();

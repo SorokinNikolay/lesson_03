@@ -1,6 +1,5 @@
 package PageObject.PageSteps;
 
-
 import io.qameta.allure.Step;
 
 import static Utils.Configuration.getFromProperties;
@@ -9,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorizationSteps {
 
-    @Step("Открываем страницу по ссылке {url}")
+    @Step("Открываем {url}")
     public static void openUrl(String url) {
         open(url);
     }
@@ -18,7 +17,7 @@ public class AuthorizationSteps {
     public static void autorisation(String login) {
         $x(loginField).sendKeys(login);
         $x(loginField).pressTab();
-        $x(passwordField).sendKeys(getFromProperties("jiraPassword"));
+        $x(passwordField).sendKeys(getFromProperties("password"));
         $x(loginButton).click();
     }
 

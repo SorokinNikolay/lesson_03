@@ -7,7 +7,7 @@ import java.io.InputStream;
 
 public class Configuration {
 
-    private static final String CONFIGURATION_FILE = "/test.properties";
+    private static final String CONFIGURATION_FILE = "/application.properties";
     private static final java.util.Properties properties;
 
     static {

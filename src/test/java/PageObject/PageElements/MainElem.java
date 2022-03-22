@@ -17,4 +17,8 @@ public class MainElem {
     public static String description = "//*[@id='description']";
 
     public static String createTaskButton = "//*[@id='create-issue-submit']";
+
+    public static String textButton = "//*[@id='aui-uid-1']";
+
+    public static String taskPush = "//*[@id='aui-flag-container']//a";
 }
