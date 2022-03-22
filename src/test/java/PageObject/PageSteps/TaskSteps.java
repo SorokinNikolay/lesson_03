@@ -3,12 +3,8 @@ package PageObject.PageSteps;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
-import java.io.IOException;
-
 import static PageObject.PageElements.TaskElem.*;
-import static Settings.WebSettings.getScreenshoot;
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.screenshot;
 
 public class TaskSteps extends MainSteps {
 
@@ -26,12 +22,5 @@ public class TaskSteps extends MainSteps {
     @Step("Проверяем, что статус задачи {stat}")
     public static void statusIs(String stat) {
         $x(status).shouldBe(Condition.text(stat));
-
-        screenshot("result.png");
-        try {
-            getScreenshoot("result.png");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

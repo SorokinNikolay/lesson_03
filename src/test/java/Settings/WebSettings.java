@@ -1,16 +1,11 @@
 package Settings;
 
 import com.codeborne.selenide.WebDriverRunner;
-import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
@@ -35,12 +30,6 @@ public class WebSettings {
     @AfterAll
     static void closeDriver() {
         closeWebDriver();
-    }
-
-    @Attachment(value = "Скриншот")
-    public static byte[] getScreenshoot(String resourceName) throws IOException {
-        return Files.readAllBytes(Paths.get("/build/reports/tests/",
-                resourceName));
     }
 
 }
